@@ -1,0 +1,66 @@
+# Build results
+bin/
+obj/
+out/
+*.log
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# IDEs
+.vscode/
+.idea/
+*.code-workspace
+
+# Visual Studio workspace state
+.vs/
+
+# EF Core
+Migrations/*Snapshot.cs
+Migrations/*.Designer.cs
+# (keep .cs files unless you're auto-regenerating migrations)
+
+# ASP.NET secrets
+appsettings.Development.json
+appsettings.Local.json
+secrets.json
+*.db
+.env
+.env.*
+
+# Docker
+*.pid
+docker-compose.override.yml
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Rider (JetBrains)
+.idea/
+*.iml
+
+# ReSharper
+_ReSharper*/
+*.DotSettings.user
+
+# Test results
+TestResults/
+coverage/
+*.coverage
+*.coveragexml
+*.testsettings
+*.vsmdi
+*.vsscc
+
+# Git
+.git/
+*.orig
+*.rej
+
+# Logs and diagnostics
+*.log
+logs/
