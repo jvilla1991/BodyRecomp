@@ -1,6 +1,7 @@
 using BodyRecomp.Services.Interfaces;
 using BodyRecomp.Services;
 using Microsoft.EntityFrameworkCore;
+using System.Text.Json.Serialization;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,9 +14,12 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 // Register your service
 builder.Services.AddScoped<IIngredientService, IngredientService>();
+builder.Services.AddScoped<IFoodLogService, FoodLogService>();
 
-
-builder.Services.AddControllers();
+builder.Services.AddControllers().AddJsonOptions(options =>
+{
+    options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
+});
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
